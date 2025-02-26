@@ -9,4 +9,6 @@ body {
     line-height: 1.6;
     background: #fdfaf0;
     scroll-behavior: smooth; // Add smooth scrolling to the entire page
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+
 }

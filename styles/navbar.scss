@@ -1,71 +1,139 @@
+/* Navbar styles */
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 3rem;
-    font-family: "Bricolage Grotesque", sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  font-family: "Bricolage Grotesque", sans-serif;
+  background: #fdfaf0; /* Matches website theme */
+  width: 100%;
+  max-width: 100vw;
+  box-sizing: border-box; /* Ensures padding doesn't cause overflow */
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+/* Brand */
+nav .brand a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: normal;
+}
+
+/* Burger menu (hidden on large screens) */
+nav .burger-menu {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1100;
+}
+
+/* Burger menu lines */
+nav .burger-menu span {
+  width: 30px;
+  height: 3px;
+  background: #000;
+  position: absolute;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Positioning the bars */
+nav .burger-menu span:nth-child(1) {
+  top: 8px;
+}
+
+nav .burger-menu span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+nav .burger-menu span:nth-child(3) {
+  bottom: 8px;
+}
+
+/* "X" animation when active */
+nav .burger-menu.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+nav .burger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+nav .burger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  bottom: 40%;
+}
+
+/* Navbar */
+nav .navbar {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+nav .navbar li {
+  margin: 0 1rem;
+}
+
+nav .navbar a {
+  color: #000;
+  text-decoration: none;
+  padding: 0.5rem;
+  display: block;
+  font-weight: normal;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+nav .navbar a.active {
+  font-weight: bold;
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+  nav {
+    padding: 1rem;
   }
-  nav .brand a {
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: normal;
-  }
+
+  /* Show burger menu */
   nav .burger-menu {
+    display: flex;
+  }
+
+  /* Navbar - initially hidden */
+  nav .navbar {
     display: none;
     flex-direction: column;
-    cursor: pointer;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    background: #fdfaf0;
+    padding: 1rem 0;
+    transition: 0.3s ease-in-out;
+    overflow-x: hidden; /* Ensures no horizontal scrolling */
   }
-  nav .burger-menu span {
-    width: 25px;
-    height: 3px;
-    background: #000;
-    margin: 4px 0;
-  }
-  nav .navbar {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+
+  /* Show navbar when active */
+  nav .navbar.active {
     display: flex;
-    align-items: center;
   }
+
   nav .navbar li {
-    margin: 0 1rem;
+    margin: 1rem 0;
   }
+
   nav .navbar a {
     color: #000;
-    text-decoration: none;
-    padding: 0.5rem;
-    display: block;
-    font-weight: normal;
-    font-size: 25px;
   }
-  nav .navbar a.active {
-    font-weight: bold;
-  }
-  @media (max-width: 768px) {
-    nav {
-      padding: 1rem;
-    }
-    nav .burger-menu {
-      display: flex;
-    }
-    nav .navbar {
-      display: none;
-      flex-direction: column;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      width: 100%;
-      text-align: center;
-      background: #fdfaf0;
-    }
-    nav .navbar.active {
-      display: flex;
-    }
-    nav .navbar li {
-      margin: 1rem 0;
-    }
-    nav .navbar a {
-      color: #000;
-    }
-  }
+}

@@ -1,10 +1,23 @@
-
 document.addEventListener("DOMContentLoaded", () => {
   const navbar = document.getElementById("navbar");
   const burgerMenu = document.getElementById("burger-menu");
   const navLinks = document.querySelectorAll(".nav-link");
 
-  // Smooth scroll to sections
+  // Toggle Navbar & Burger Animation
+  burgerMenu.addEventListener("click", () => {
+    navbar.classList.toggle("active");
+    burgerMenu.classList.toggle("active");
+  });
+
+  // Close Navbar on Outside Click
+  document.addEventListener("click", (e) => {
+    if (!burgerMenu.contains(e.target) && !navbar.contains(e.target)) {
+      navbar.classList.remove("active");
+      burgerMenu.classList.remove("active");
+    }
+  });
+
+  // Smooth Scroll & Active Link Highlighting
   navLinks.forEach((link) => {
     link.addEventListener("click", function (e) {
       e.preventDefault();
@@ -12,30 +25,17 @@ document.addEventListener("DOMContentLoaded", () => {
       const targetSection = document.querySelector(targetId);
       targetSection.scrollIntoView({ behavior: "smooth" });
       setActiveLink(this);
+      navbar.classList.remove("active"); // Close menu on click
+      burgerMenu.classList.remove("active");
     });
   });
 
-  // Set the active link
   function setActiveLink(clickedLink) {
-    navLinks.forEach((link) => {
-      link.classList.remove("active");
-    });
+    navLinks.forEach((link) => link.classList.remove("active"));
     clickedLink.classList.add("active");
   }
 
-  // Burger menu functionality
-  burgerMenu.addEventListener("click", () => {
-    navbar.classList.toggle("active");
-  });
-
-  // Close navbar when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!burgerMenu.contains(e.target) && !navbar.contains(e.target)) {
-      navbar.classList.remove("active");
-    }
-  });
-
-  // Highlight active link on scroll
+  // Highlight Active Link on Scroll
   window.addEventListener("scroll", () => {
     const scrollPosition = window.scrollY;
 
@@ -50,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
 
   const circleContainer = document.querySelector(".circle-container");
   const contactSection = document.getElementById("contact");
