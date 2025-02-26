@@ -1,0 +1,27 @@
+/* Contact Section */
+#contact {
+  position: relative;
+  padding: 2rem;
+  min-height: 100vh;
+  background: white;
+}
+
+.circle-container {
+  position: fixed;
+  bottom: -50vw; /* Ensures only the top curve is visible */
+  left: 50%;
+  transform: translateX(-50%) scale(0.2);
+  width: 100vw;
+  height: 100vw;
+  background-color: orange;
+  border-radius: 50%;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  z-index: 1000;
+  opacity: 0; /* Initially hidden */
+}
+
+.circle {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}/*# sourceMappingURL=contact.css.map */

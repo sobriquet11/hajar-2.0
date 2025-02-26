@@ -1,141 +1,187 @@
 #home {
   display: flex;
   align-items: center;
+  justify-content: space-between; /* Ensures space distribution */
   height: 90vh;
   padding-left: 6rem;
-  position: relative; /* Ensure .card-container is positioned relative to #home */
+  padding-right: 2rem;
+  position: relative; /* Keeps child elements positioned correctly */
+}
 
+h1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: bold;
+  font-size: 120px;
+  margin: 0;
+  line-height: 1.2;
+  position: relative;
+}
+
+.odds {
+  position: relative;
+  display: inline-block;
+}
+
+.circle-gif {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: auto;
+  pointer-events: none;
+}
+
+/* Ensure cards always stay in the bottom right */
+.card-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 380px;
+  height: 400px;
+}
+
+.card {
+  position: absolute;
+  width: 340px;
+  height: 430px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:nth-child(1) {
+  top: 10px;
+  left: 40px;
+  z-index: 1;
+}
+
+.card:nth-child(2) {
+  transform: rotate(-15deg);
+  top: 10px;
+  left: -80px;
+  z-index: 2;
+}
+
+.card:nth-child(3) {
+  transform: rotate(-30deg);
+  top: 50px;
+  left: -200px;
+  z-index: 3;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1024px) {
   h1 {
-      font-family: 'Bricolage Grotesque', sans-serif;
-      font-weight: bold;
-      font-size: 120px;
-      margin-top: -50px;
-      margin-left: 50px;
-      line-height: 1.2;
-      position: relative;
+    font-size: 80px;
+    margin-left: 20px;
+  }
 
-      .odds {
-          position: relative;
-          display: inline-block;
-
-          .circle-gif {
-              position: absolute;
-              top: -20px;
-              left: 50%;
-              transform: translateX(-50%);
-              width: 300px;
-              height: auto;
-              pointer-events: none;
-          }
-      }
+  .circle-gif {
+    width: 200px;
   }
 
   .card-container {
-    position: absolute;
-    bottom: 0; 
-    right: 0;
-    width: 380px;
-    height: 400px;
+    width: 300px;
+    height: 320px;
   }
 
   .card {
-    position: absolute;
-    width: 340px;
-    height: 430px;
-    transition: transform 0.3s ease-in-out;
+    width: 280px;
+    height: 350px;
+  }
+}
+@media (max-width: 768px) {
+  #home {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    text-align: center;
+    height: 100vh; /* Ensure full height */
+    padding: 0 1rem; /* Adjust padding */
   }
 
-  /* Back card (no rotation) */
+  h1 {
+    font-size: 100px;
+    margin: 5rem auto 20px; /* Pushes it slightly down */
+  }
+
+  .circle-gif {
+    width: 240px;
+    top: -10px;
+  }
+
+  /* Keep the cards in the bottom right */
+  .card-container {
+    width: 250px;
+    height: 280px;
+    bottom: 5%; /* Adjust bottom positioning */
+    right: 5%;
+  }
+
+  .card {
+    width: 230px;
+    height: 300px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 480px) {
+  #home {
+    height: 100vh; /* Full height for better centering */
+    justify-content: center; /* Ensure proper centering */
+  }
+
+  h1 {
+    font-size: 4rem;
+    margin: -10rem auto 20px; /* Moves it further down */
+  }
+
+  .circle-gif {
+    width: 10rem;
+  }
+
+  /* Keep cards at bottom right even on smallest screens */
+  .card-container {
+    width: 200px;
+    height: 230px;
+    bottom: 0;
+    right: 5%;
+  }
+
+  .card {
+    width: 100px;
+    height: 150px;
+  }
   .card:nth-child(1) {
     top: 10px;
-    left: 40px;
+    left: 120px;
     z-index: 1;
   }
-
-  /* Middle card (rotated slightly) */
+  
   .card:nth-child(2) {
     transform: rotate(-15deg);
     top: 10px;
-    left: -80px;
+    left: 80px;
     z-index: 2;
   }
-
-  /* Front card (rotated slightly) */
+  
   .card:nth-child(3) {
     transform: rotate(-30deg);
-    top: 50px;
-    left: -200px;
+    top: 25px;
+    left: 40px;
     z-index: 3;
   }
-
-
-
-/* Responsive Styles for Very Small Screens (e.g., mobile phones) */
-
 }
 
-#services{
-  display: flex;
-  align-items: center;
-  height: 90vh;
-  padding-left: 6rem;
-  position: relative; /* Ensure .card-container is positioned relative to #home */
-  
-  .hr-container {
-      display: flex;
-      align-items: center;
-      width: 100%;
-  }
-  
-  .hr-container::before,
-  .hr-container::after {
-      content: "";
-      flex-grow: 1;
-      height: 2px;
-      background-color: #7D0D0D;
-      margin: 0 15px;
-      max-width: 200px; /* Adjust line length */
-  }
-  
-  h2 {
-      font-size: 40px;
-      font-weight: bold;
-      font-family: "Work Sans";
-      color: #7D0D0D;
-      text-transform: uppercase;
-      text-align: center;
-      white-space: nowrap; /* Prevent text wrapping */
-  }
-}
-
-/* Contact Section */
-#contact {
-position: relative;
-padding: 2rem;
-min-height: 100vh;
-background: white;
-}
-
-
-.circle-container {
-  position: fixed;
-  bottom: -50vw; /* Ensures only the top curve is visible */
-  left: 50%;
-  transform: translateX(-50%) scale(0.2);
-  width: 100vw;
-  height: 100vw;
-  background-color: orange;
-  border-radius: 50%;
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  z-index: 1000;
-  opacity: 0; /* Initially hidden */
-}
-
-
-
-
-.circle {
-text-align: center;
-color: white;
-font-size: 2rem;
-}

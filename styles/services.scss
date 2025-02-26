@@ -1,0 +1,33 @@
+#services{
+    display: flex;
+    align-items: center;
+    height: 90vh;
+    padding-left: 6rem;
+    position: relative; /* Ensure .card-container is positioned relative to #home */
+    
+    .hr-container {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+    
+    .hr-container::before,
+    .hr-container::after {
+        content: "";
+        flex-grow: 1;
+        height: 2px;
+        background-color: #7D0D0D;
+        margin: 0 15px;
+        max-width: 200px; /* Adjust line length */
+    }
+    
+    h2 {
+        font-size: 40px;
+        font-weight: bold;
+        font-family: "Work Sans";
+        color: #7D0D0D;
+        text-transform: uppercase;
+        text-align: center;
+        white-space: nowrap; /* Prevent text wrapping */
+    }
+  }

@@ -51,10 +51,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
- 
-});
-
-document.addEventListener("DOMContentLoaded", () => {
   const circleContainer = document.querySelector(".circle-container");
   const contactSection = document.getElementById("contact");
 
@@ -82,5 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
           circleContainer.style.transform = `translateX(-50%) scale(0.2)`;
       }
   });
+
 });
 
