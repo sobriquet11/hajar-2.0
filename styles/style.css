@@ -80,17 +80,17 @@ nav .navbar a.active {
 #home {
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Ensures space distribution */
-  height: 90vh;
+  justify-content: space-between;
+  height: 90vh; /* Keeps section filling most of the screen */
   padding-left: 6rem;
   padding-right: 2rem;
-  position: relative; /* Keeps child elements positioned correctly */
+  position: relative;
 }
 
 h1 {
   font-family: "Bricolage Grotesque", sans-serif;
   font-weight: bold;
-  font-size: 120px;
+  font-size: 7rem; /* Responsive text */
   margin: 0;
   line-height: 1.2;
   position: relative;
@@ -103,10 +103,10 @@ h1 {
 
 .circle-gif {
   position: absolute;
-  top: -20px;
+  top: -1.25rem; /* Responsive adjustment */
   left: 50%;
   transform: translateX(-50%);
-  width: 300px;
+  width: 18.75rem; /* Scales dynamically */
   height: auto;
   pointer-events: none;
 }
@@ -116,122 +116,124 @@ h1 {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 380px;
-  height: 400px;
+  width: 24rem; /* Scales with layout */
+  height: 25rem;
 }
 
 .card {
   position: absolute;
-  width: 340px;
-  height: 430px;
+  width: 21.25rem;
+  height: 26.875rem;
   transition: transform 0.3s ease-in-out;
 }
 
 .card:nth-child(1) {
-  top: 10px;
-  left: 40px;
+  top: 0.625rem;
+  left: 2.5rem;
   z-index: 1;
 }
 
 .card:nth-child(2) {
   transform: rotate(-15deg);
-  top: 10px;
-  left: -80px;
+  top: 0.625rem;
+  left: -5rem;
   z-index: 2;
 }
 
 .card:nth-child(3) {
   transform: rotate(-30deg);
-  top: 50px;
-  left: -200px;
+  top: 3.125rem;
+  left: -12.5rem;
   z-index: 3;
 }
 
-/* Responsive Adjustments */
+/* Tablet Screens */
 @media (max-width: 1024px) {
   h1 {
-    font-size: 80px;
-    margin-left: 20px;
+    font-size: 5rem;
+    margin-left: 1.25rem;
   }
   .circle-gif {
-    width: 200px;
+    width: 12.5rem;
   }
   .card-container {
-    width: 300px;
-    height: 320px;
+    width: 18.75rem;
+    height: 20rem;
   }
   .card {
-    width: 280px;
-    height: 350px;
+    width: 17.5rem;
+    height: 21.875rem;
   }
 }
+/* Mobile Screens */
 @media (max-width: 768px) {
   #home {
     flex-direction: column;
     align-items: center;
-    justify-content: center; /* Center content vertically */
+    justify-content: center;
     text-align: center;
-    height: 100vh; /* Ensure full height */
-    padding: 0 1rem; /* Adjust padding */
-  }
-  h1 {
-    font-size: 100px;
-    margin: 5rem auto 20px; /* Pushes it slightly down */
-  }
-  .circle-gif {
-    width: 240px;
-    top: -10px;
-  }
-  /* Keep the cards in the bottom right */
-  .card-container {
-    width: 250px;
-    height: 280px;
-    bottom: 5%; /* Adjust bottom positioning */
-    right: 5%;
-  }
-  .card {
-    width: 230px;
-    height: 300px;
-  }
-}
-@media (max-width: 480px) {
-  #home {
-    height: 100vh; /* Full height for better centering */
-    justify-content: center; /* Ensure proper centering */
+    height: 100vh;
+    padding: 0 1rem;
   }
   h1 {
     font-size: 4rem;
-    margin: -10rem auto 20px; /* Moves it further down */
+    margin: 3rem auto 1.25rem; /* Moves it slightly down */
   }
   .circle-gif {
     width: 10rem;
+    top: -0.625rem;
   }
-  /* Keep cards at bottom right even on smallest screens */
+  /* Keep the cards in the bottom right */
   .card-container {
-    width: 200px;
-    height: 230px;
+    width: 15.625rem;
+    height: 17.5rem;
     bottom: 5%;
     right: 5%;
   }
   .card {
-    width: 180px;
-    height: 250px;
+    width: 14.375rem;
+    height: 18.75rem;
+  }
+}
+/* Small Mobile Screens */
+@media (max-width: 480px) {
+  #home {
+    height: 100vh;
+    justify-content: center;
+  }
+  h1 {
+    font-size: 3rem;
+    margin: 2rem auto 1.25rem; /* Moves it slightly lower */
+  }
+  .circle-gif {
+    width: 8rem;
+  }
+  /* Keep cards at bottom right even on smallest screens */
+  .card-container {
+    width: 12.5rem;
+    height: 14.375rem;
+    bottom: 0;
+    right: 5%;
+  }
+  .card {
+    width: 9.375rem;
+    height: 12.5rem;
   }
   .card:nth-child(1) {
-    top: 10px;
-    left: 40px;
+    top: 0.625rem;
+    left: 7.5rem;
     z-index: 1;
   }
   .card:nth-child(2) {
     transform: rotate(-15deg);
-    top: 10px;
-    left: -80px;
+    top: 0.625rem;
+    left: 5rem;
     z-index: 2;
   }
   .card:nth-child(3) {
     transform: rotate(-30deg);
-    top: 50px;
-    left: -200px;
+    top: 1.5625rem;
+    left: 2.5rem;
     z-index: 3;
   }
 }
