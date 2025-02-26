@@ -1,0 +1,122 @@
+#home {
+  display: flex;
+  align-items: center;
+  height: 90vh;
+  padding-left: 6rem;
+  position: relative; /* Ensure .card-container is positioned relative to #home */
+  /* Back card (no rotation) */
+  /* Middle card (rotated slightly) */
+  /* Front card (rotated slightly) */
+  /* Responsive Styles for Very Small Screens (e.g., mobile phones) */
+}
+#home h1 {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: bold;
+  font-size: 120px;
+  margin-top: -50px;
+  margin-left: 50px;
+  line-height: 1.2;
+  position: relative;
+}
+#home h1 .odds {
+  position: relative;
+  display: inline-block;
+}
+#home h1 .odds .circle-gif {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: auto;
+  pointer-events: none;
+}
+#home .card-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 380px;
+  height: 400px;
+}
+#home .card {
+  position: absolute;
+  width: 340px;
+  height: 430px;
+  transition: transform 0.3s ease-in-out;
+}
+#home .card:nth-child(1) {
+  top: 10px;
+  left: 40px;
+  z-index: 1;
+}
+#home .card:nth-child(2) {
+  transform: rotate(-15deg);
+  top: 10px;
+  left: -80px;
+  z-index: 2;
+}
+#home .card:nth-child(3) {
+  transform: rotate(-30deg);
+  top: 50px;
+  left: -200px;
+  z-index: 3;
+}
+
+#services {
+  display: flex;
+  align-items: center;
+  height: 90vh;
+  padding-left: 6rem;
+  position: relative; /* Ensure .card-container is positioned relative to #home */
+}
+#services .hr-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+#services .hr-container::before,
+#services .hr-container::after {
+  content: "";
+  flex-grow: 1;
+  height: 2px;
+  background-color: #7D0D0D;
+  margin: 0 15px;
+  max-width: 200px; /* Adjust line length */
+}
+#services h2 {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "Work Sans";
+  color: #7D0D0D;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Contact Section */
+#contact {
+  position: relative;
+  padding: 2rem;
+  min-height: 100vh;
+  background: white;
+}
+
+.circle-container {
+  position: fixed;
+  bottom: -50vw; /* Ensures only the top curve is visible */
+  left: 50%;
+  transform: translateX(-50%) scale(0.2);
+  width: 100vw;
+  height: 100vw;
+  background-color: orange;
+  border-radius: 50%;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  z-index: 1000;
+  opacity: 0; /* Initially hidden */
+}
+
+.circle {
+  text-align: center;
+  color: white;
+  font-size: 2rem;
+}/*# sourceMappingURL=home.css.map */
