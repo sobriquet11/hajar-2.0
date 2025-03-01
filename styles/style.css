@@ -345,7 +345,7 @@ h1 {
 }
 
 .winning-cards {
-  margin-top: 1rem;
+  margin-top: 10rem;
 }
 
 .circle {
@@ -372,6 +372,12 @@ h1 {
   border-radius: 20px;
   cursor: pointer;
   font-weight: bold;
+}
+
+.next-section {
+  background-color: #0d07cd;
+  padding: 100px 20px;
+  text-align: center;
 }
 
 @media (max-width: 768px) {

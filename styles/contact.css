@@ -49,6 +49,12 @@
   font-weight: bold;
 }
 
+.next-section {
+  background-color: #0d07cd;
+  padding: 100px 20px;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .circle p {
     font-size: 1rem;
