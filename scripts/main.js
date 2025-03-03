@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     gsap.to(circleContainer, {
       width: "150vw",  // Le cercle devient plus large
-      height: "200vh", // Il devient aussi plus haut
+      height: "150vh", // Il devient aussi plus haut
       borderRadius: "50vw 50vw 0 0", // Garde la forme d’un demi-cercle
       scrollTrigger: {
         trigger: "#contact",

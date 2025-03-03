@@ -331,7 +331,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  height: 200vh; /* Permet assez d'espace pour scroller */
+  height: 130vh; /* Permet assez d'espace pour scroller */
   overflow: hidden;
 }
 
@@ -365,11 +365,12 @@ h1 {
 }
 
 .circle p {
-  margin-top: 20px;
-  font-size: 1.2rem;
-  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
+  max-width: min(80%, 600px); /* Évite que le texte devienne trop large */
+  padding: 0 1.5rem; /* Ajoute de l'espace pour ne pas coller aux bords */
+  text-align: center;
 }
 
 .circle button {
@@ -395,10 +396,17 @@ h1 {
   }
   .circle p {
     font-size: 1rem;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+    max-width: min(80%, 600px); /* Keeps it within 600px max */
+    padding: 0 1.5rem; /* Ensures spacing on smaller screens */
+    text-align: center;
   }
   .circle button {
     font-size: 1rem;
     padding: 8px 16px;
+  }
+  .winning-cards {
+    max-width: 70%;
   }
 }
 body {
